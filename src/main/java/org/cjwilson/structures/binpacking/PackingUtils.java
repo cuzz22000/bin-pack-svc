@@ -4,15 +4,15 @@ import java.util.List;
 
 public class PackingUtils {
 	
-	public static int numOfBins(List<Double> items) {
+	public static <T extends Item> int numOfBins(List<T> items) {
 		Double num = Math.ceil(sum(items)) / 1;
 		return num.intValue();
 	}
 
-	public static Double sum(List<Double> items) {
+	public static <T extends Item> Double sum(List<T> items) {
 		double sum = 0;
-		for (double item : items) {
-			sum += item;
+		for ( Item item : items) {
+			sum += item.weight();
 		}
 		return sum;
 	}
