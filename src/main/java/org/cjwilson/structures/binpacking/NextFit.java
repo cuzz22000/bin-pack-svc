@@ -1,7 +1,6 @@
 package org.cjwilson.structures.binpacking;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class NextFit implements BinPacking {

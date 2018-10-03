@@ -27,4 +27,5 @@ public class NextFitTest {
 
 		assertThat(bins, equalTo(expected));
 	}
+	
 }
