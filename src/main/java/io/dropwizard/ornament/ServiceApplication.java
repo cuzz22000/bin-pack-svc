@@ -2,6 +2,7 @@ package io.dropwizard.ornament;
 
 import java.security.Principal;
 
+import org.cjwilson.binpacking.resource.BinPack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,13 +50,15 @@ public class ServiceApplication extends Application<ServiceConfiguration> {
     environment.healthChecks().register(getName() + " HealthCheck", new ServiceHeath());
     environment.jersey().register(new ServiceHeath());
     // sample resource
-    environment.jersey().register(new SampleResource(configuration));
+    //environment.jersey().register(new SampleResource(configuration));
     // token authenticator
     environment.jersey()
         .register(new AuthDynamicFeature(new OAuthCredentialAuthFilter.Builder<Principal>()
             .setAuthenticator(new TokenAuthentication(configuration.authenticationToken()))
             .setPrefix("Bearer").buildAuthFilter()));
     environment.jersey().register(new AuthValueFactoryProvider.Binder<>(Principal.class));
+    
+    environment.jersey().register(new BinPack());
 
   }
 
