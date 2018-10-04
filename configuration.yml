@@ -39,7 +39,7 @@ logging:
 
 # a comma separated string of the packages that contain your @Api annotated resources  
 swagger:
-  resourcePackage: io.dropwizard.ornament.sample,org.cjwilson.binpacking.resource
+  resourcePackage: org.cjwilson.binpacking.resource
   schemes: 
     - http
     - https
