@@ -15,7 +15,7 @@ public class NextFitTest {
 	public void nextFitRegression() {
 		final List<ItemForTest> items = ItemForTest.toTest();
 
-		final List<List<ItemForTest>> bins = new NextFit<ItemForTest>().pack(items);
+		final List<List<ItemForTest>> bins = new NextFit<ItemForTest>().pack(1d,items);
 		System.out.println("Next Fit -> " + bins);
 		// expected eg [[0.2, 0.5], [0.4], [0.7, 0.1], [0.3], [0.8]]]
 		final List<List<ItemForTest>> expected = new ArrayList<>();

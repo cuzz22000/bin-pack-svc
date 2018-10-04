@@ -7,11 +7,11 @@ import java.util.List;
 public class BestFit<T extends Item> implements BinPacking<T>{
 
 	@Override
-	public List<List<T>> pack(List<T> items) {
+	public List<List<T>> pack(Double capacity, List<T> items) {
 		List<List<T>> result = new ArrayList<>();
 		List<Double> remaining = new LinkedList<>();
 		for (T item : items) {
-			double min = 1;
+			double min = capacity;
 			int bestIndex = 0;
 			for (int i = 0; i < remaining.size(); i++) {
 				if (item.weight() <= remaining.get(i) && remaining.get(i) - item.weight() < min) {
@@ -20,7 +20,7 @@ public class BestFit<T extends Item> implements BinPacking<T>{
 				}
 			}
 
-			if (min == 1) {
+			if (min == capacity) {
 				remaining.add(1 - item.weight());
 				List<T> newItem = new ArrayList<>();
 				newItem.add(item);

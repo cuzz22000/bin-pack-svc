@@ -14,7 +14,7 @@ public class BestFitTest {
 	@Test
 	public void bestFitRegression() {
 
-		final List<List<ItemForTest>> bins = new BestFit<ItemForTest>().pack(ItemForTest.toTest());
+		final List<List<ItemForTest>> bins = new BestFit<ItemForTest>().pack(1d,ItemForTest.toTest());
 		System.out.println("Best Fit -> " + bins);
 		// expected eg [[0.2, 0.5, 0.1], [0.4, 0.3], [0.7], [0.8]]
 		final List<List<ItemForTest>> expected = new ArrayList<>();

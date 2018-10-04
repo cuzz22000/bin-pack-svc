@@ -6,13 +6,13 @@ import java.util.List;
 public class NextFit<T extends Item> implements BinPacking<T> {
 
 	@Override
-	public List<List<T>> pack(List<T> items) {
+	public List<List<T>> pack(Double capacity, List<T> items) {
 		List<List<T>> result = new ArrayList<>();
 		double curr = 0;
 		List<T> bin = new ArrayList<>();
 		result.add(bin);
 		for (T item : items) {
-			if (item.weight() + curr <= 1) {
+			if (item.weight() + curr <= capacity) {
 				bin.add(item);
 			} else {
 				curr = 0;

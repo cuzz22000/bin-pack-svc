@@ -15,7 +15,7 @@ public class FirstFitTest {
 	public void firstFitRegression() {
 		final List<ItemForTest> items = ItemForTest.toTest();
 
-		final List<List<ItemForTest>> bins = new FirstFit<ItemForTest>().pack(items);
+		final List<List<ItemForTest>> bins = new FirstFit<ItemForTest>().pack(1d,items);
 		System.out.println("First Fit -> " + bins);
 		// expected eg [[0.2, 0.5, 0.1], [0.4, 0.3], [0.7], [0.8]]
 		final List<List<ItemForTest>> expected = new ArrayList<>();
