@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import com.google.common.base.MoreObjects;
+
 public class ItemForTest implements Item {
 
 	private Double weight;
@@ -37,13 +39,12 @@ public class ItemForTest implements Item {
 
 	@Override
 	public String toString() {
-		return String.valueOf(weight());
+		return MoreObjects.toStringHelper(ItemForTest.class).add("weight", weight()).toString();
 	}
-	
-	static List<ItemForTest> toTest(){
-		return  Arrays
-				.asList(new ItemForTest[] { new ItemForTest(0.2), new ItemForTest(0.5), new ItemForTest(0.4),
-						new ItemForTest(0.7), new ItemForTest(0.1), new ItemForTest(0.3), new ItemForTest(0.8) });
+
+	static List<ItemForTest> toTest() {
+		return Arrays.asList(new ItemForTest[] { new ItemForTest(0.2), new ItemForTest(0.5), new ItemForTest(0.4),
+				new ItemForTest(0.7), new ItemForTest(0.1), new ItemForTest(0.3), new ItemForTest(0.8) });
 	}
 
 }
