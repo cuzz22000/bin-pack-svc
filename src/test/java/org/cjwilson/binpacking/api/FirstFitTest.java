@@ -1,4 +1,4 @@
-package org.cjwilson.structures.binpacking;
+package org.cjwilson.binpacking.api;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.cjwilson.binpacking.api.FirstFit;
 import org.junit.Test;
 
 public class FirstFitTest {

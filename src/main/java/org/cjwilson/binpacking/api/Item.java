@@ -1,4 +1,4 @@
-package org.cjwilson.structures.binpacking;
+package org.cjwilson.binpacking.api;
 
 public interface Item {
 	

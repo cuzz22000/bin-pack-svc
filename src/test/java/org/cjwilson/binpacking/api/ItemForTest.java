@@ -1,8 +1,10 @@
-package org.cjwilson.structures.binpacking;
+package org.cjwilson.binpacking.api;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+
+import org.cjwilson.binpacking.api.Item;
 
 import com.google.common.base.MoreObjects;
 
