@@ -44,7 +44,7 @@ public class ItemForTest implements Item {
 		return MoreObjects.toStringHelper(ItemForTest.class).add("weight", weight()).toString();
 	}
 
-	static List<ItemForTest> toTest() {
+	public static List<ItemForTest> toTest() {
 		return Arrays.asList(new ItemForTest[] { new ItemForTest(0.2), new ItemForTest(0.5), new ItemForTest(0.4),
 				new ItemForTest(0.7), new ItemForTest(0.1), new ItemForTest(0.3), new ItemForTest(0.8) });
 	}
