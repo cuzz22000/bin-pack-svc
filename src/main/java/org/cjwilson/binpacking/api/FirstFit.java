@@ -3,7 +3,7 @@ package org.cjwilson.binpacking.api;
 import java.util.ArrayList;
 import java.util.List;
 
-class FirstFit<T extends Item> implements BinPacking<T> {
+public class FirstFit<T extends Item> implements BinPacking<T> {
 	
 	@Override
 	public List<List<T>> pack(Double capacity, List<T> items) {
