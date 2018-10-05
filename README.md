@@ -24,7 +24,7 @@ $> gradlew run
 
 All services are available via Swagger API (openApi). When running locally viz native JVM or Docker UI can be accessed from the following url.
 
-`http://localhost:8080/swagger`
+[http://localhost:8080/swagger](http://localhost:8080/swagger)
 
 Example Json Request
 
