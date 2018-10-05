@@ -1,5 +1,6 @@
 ## bin-packing-svc
 
+[![alt travis](https://travis-ci.org/cuzz22000/bin-pack-svc.svg?branch=master)](https://travis-ci.org/cuzz22000/bin-pack-svc)
 
 Explanation coming later
 
