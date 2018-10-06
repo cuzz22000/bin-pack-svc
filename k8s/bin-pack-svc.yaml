@@ -1,0 +1,46 @@
+# APP DEPLOYMENT
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: bin-pack-svc
+  name: bin-pack-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: bin-pack-svc-exposed
+  template:
+    metadata:
+      labels:
+        run: bin-pack-svc-exposed
+    spec:
+      containers:
+      - image: cuzz22000/bin-pack-svc:latest
+        name: bin-pack-svc
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+          - name: ENVIRONMENT
+            value: local
+
+---
+
+# APP SERVICE
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: bin-pack-svc
+  name: bin-pack-svc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: bin-pack-svc-exposed
+  type: NodePort
